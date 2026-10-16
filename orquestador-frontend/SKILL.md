@@ -35,8 +35,14 @@ npx skills add doodledood/claude-code-plugins --skill scrollytelling --agent <AG
 # Dirección de arte / taste
 npx skills add https://github.com/Leonxlnx/taste-skill --agent <AGENTE> --global
 
-# Referencia visual (no tiene flag --agent; mismo comando para ambos)
-npx skillscat add rshvr/elite-web-design/elite-inspiration
+# Referencia visual — usa --global-agent y --yes, NO corras el comando sin flags:
+# sin ellos, skillscat add es interactivo y por defecto instala en los 7 agentes que soporta
+# (Cursor, Codex, Gemini, etc.), no solo en el tuyo.
+npx skillscat add rshvr/elite-web-design/elite-inspiration --global-agent claude-code --yes
+# Si estás en Antigravity, el valor de --global-agent puede no ser literalmente "antigravity"
+# (skillscat nombra a los agentes a su manera, ej. puede ser "gemini"). Si no estás seguro de
+# cuál es, corre `npx skillscat add --help` primero para ver la lista de agentes soportados en
+# vez de adivinar o dejarlo correr interactivo sin supervisión.
 ```
 
 Si algún comando falla (nombre de paquete cambió, CLI no instalado, el flag `--agent antigravity`
