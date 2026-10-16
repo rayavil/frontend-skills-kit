@@ -1,6 +1,6 @@
 ---
 name: orquestador-frontend
-description: Usar SIEMPRE que Ray empiece un proyecto de frontend nuevo (webapp, dashboard, SaaS, tienda online, landing page, sitio institucional, presentación ejecutiva en navegador, app móvil) o pida corregir/mejorar uno que ya se ve "genérico", "feo" o "como de IA". Esta skill decide por sí sola a cuáles otras skills del kit de Ray recurrir (elegir-ui para plantillas/componentes, frontend-design + taste-skill para dirección de arte, cinematic-gsap-lenis-motion-system + scrollytelling + gsap-skills para animación premium por scroll) según el tipo de proyecto, y hace de intérprete entre lo que Ray describe en términos vagos y las instrucciones técnicas concretas que cada skill necesita. Dispara con frases como "vamos a hacer...", "necesito un sitio/app/tienda/presentación de...", "arma el frontend de...", "esto se ve feo/genérico".
+description: Usar SIEMPRE que Ray empiece un proyecto de frontend nuevo (webapp, dashboard, SaaS, tienda online, landing page, sitio institucional, presentación ejecutiva en navegador, app móvil), pida corregir/mejorar uno que ya se ve "genérico", "feo" o "como de IA", o pida verificar/instalar sus dependencias en un equipo nuevo. Esta skill decide por sí sola a cuáles otras skills del kit de Ray recurrir (elegir-ui para plantillas/componentes, frontend-design + taste-skill para dirección de arte, cinematic-gsap-lenis-motion-system + scrollytelling + gsap-skills para animación premium por scroll) según el tipo de proyecto, y hace de intérprete entre lo que Ray describe en términos vagos y las instrucciones técnicas concretas que cada skill necesita. Dispara con frases como "vamos a hacer...", "necesito un sitio/app/tienda/presentación de...", "arma el frontend de...", "esto se ve feo/genérico", "checa que tenga todo instalado", "verifica mis skills de frontend".
 ---
 
 # Orquestador de frontend
@@ -45,6 +45,11 @@ te quedes callado ni sigas como si hubiera funcionado. Si un paquete de terceros
 instalar directo para Antigravity, cópialo manualmente a la carpeta de Antigravity de la tabla de
 arriba (mismo formato `SKILL.md`, solo cambia dónde vive). Una vez instalada una dependencia en
 una máquina, no vuelvas a correr su comando ahí.
+
+**Esto se puede pedir solo, sin arrancar un proyecto.** Si Ray dice algo como "checa que tenga
+todo instalado en este equipo" o "verifica mis skills de frontend", corre únicamente este Paso 0
+y repórtale qué encontraste y qué instalaste — no sigas a los pasos 1-3, no hay proyecto que
+clasificar todavía.
 
 ## Paso 1 — Clasifica el proyecto
 
