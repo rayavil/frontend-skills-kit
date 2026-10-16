@@ -1,0 +1,515 @@
+# Catálogo de sistemas de UI y plantillas open source
+# Para: Ray Ávila / Devizac — stack principal: Laravel + Inertia.js + Vue 3 / React + Tailwind
+# Última actualización: 2026-10-16
+# Fuentes: investigación propia + validación comunitaria (Reddit agregado, rankings especializados, GitHub stats)
+#
+# Campos:
+#   tipo: "plantilla" (páginas armadas con layout, nav y datos de ejemplo) | "libreria" (componentes sueltos a ensamblar)
+#   licencia_gratis: true si el uso que necesitas (no comercial-Pro) es 100% gratis
+#   estado: "activa" | "mantenimiento_moderado" | "legacy" (evitar)
+#   top_pick: true = primera opción recomendada en su categoría para el stack de Ray
+#   instalacion: cómo se obtiene (npm/composer/copy-paste/git clone)
+
+starter_kit:
+  - id: laravel-breeze
+    nombre: "Laravel Breeze (Inertia)"
+    tipo: plantilla
+    framework: [vue3, react]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/laravel/breeze
+    demo: null
+    instalacion: "composer require laravel/breeze --dev && php artisan breeze:install"
+    estado: activa
+    top_pick: false
+    nota: "Oficial de Laravel. Considerar laravel/vue-starter-kit como reemplazo moderno (ver abajo)."
+
+  - id: laravel-vue-starter-kit
+    nombre: "Laravel Vue Starter Kit (oficial, Inertia v2)"
+    tipo: plantilla
+    framework: [vue3]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/laravel/vue-starter-kit
+    demo: null
+    instalacion: "laravel new --vue"
+    estado: activa
+    top_pick: true
+    nota: "Reemplazo moderno de Breeze. Punto de partida por defecto para nuevos proyectos Inertia+Vue."
+
+  - id: pingcrm
+    nombre: "Ping CRM (demo oficial de Inertia.js)"
+    tipo: plantilla
+    framework: [vue3]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/inertiajs/pingcrm
+    demo: https://demo.inertiajs.com/login
+    instalacion: "git clone"
+    estado: activa
+    top_pick: true
+    nota: "Mejor referencia real de cómo estructurar un CRM/admin completo en Laravel+Inertia. Útil como esqueleto, no solo como UI."
+
+  - id: shadcn-ui
+    nombre: "shadcn/ui / shadcn-vue"
+    tipo: libreria
+    framework: [react, vue3]
+    licencia: MIT
+    licencia_gratis: true
+    repo: "https://github.com/shadcn-ui/ui | https://github.com/unovue/shadcn-vue"
+    demo: "https://ui.shadcn.com/examples/dashboard | https://www.shadcn-vue.com/examples/dashboard.html"
+    instalacion: "npx shadcn@latest init"
+    estado: activa
+    top_pick: true
+    nota: "#1 mejor valorada por la comunidad dev (4.6-4.8/5 en reseñas agregadas). Control total del código, se copia a tu repo."
+
+  - id: sakai
+    nombre: "Sakai Vue / React (PrimeTek)"
+    tipo: plantilla
+    framework: [vue3, react]
+    licencia: MIT
+    licencia_gratis: true
+    repo: "https://github.com/primefaces/sakai-vue | https://github.com/primefaces/sakai-react"
+    demo: "https://sakai.primevue.org/ | https://sakai.primereact.org/"
+    instalacion: "git clone"
+    estado: activa
+    top_pick: false
+    nota: "Dashboard completo con menú, gráficas y páginas. Integrable en resources/js de Inertia."
+
+  - id: admin-one-vue-tailwind
+    nombre: "Admin One Vue Tailwind"
+    tipo: plantilla
+    framework: [vue3]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/justboil/admin-one-vue-tailwind
+    demo: https://justboil.github.io/admin-one-vue-tailwind/
+    instalacion: "git clone"
+    estado: activa
+    top_pick: false
+    nota: "Guía oficial para integrarse sobre Breeze + Inertia."
+
+  - id: flowbite
+    nombre: "Flowbite (React / Vue)"
+    tipo: libreria
+    framework: [react, vue3]
+    licencia: "MIT (core) / Pro freemium"
+    licencia_gratis: true
+    repo: "https://github.com/themesberg/flowbite-react | https://github.com/themesberg/flowbite-vue"
+    demo: https://flowbite.com/application-ui/demo/
+    instalacion: "npm install flowbite-vue / flowbite-react"
+    estado: activa
+    top_pick: false
+    nota: "Solo usar el core gratis; los bloques 'Pro' no cuentan como libres."
+
+dashboard:
+  - id: vuestic-admin
+    nombre: "Vuestic Admin"
+    tipo: plantilla
+    framework: [vue3]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/epicmaxco/vuestic-admin
+    demo: null
+    instalacion: "git clone / npm"
+    estado: activa
+    top_pick: true
+    nota: "10,964 estrellas en GitHub. Vue 3 + Vite + Pinia + Tailwind. La mejor plantilla de admin en Vue encontrada en esta ronda — no estaba en el catálogo inicial."
+
+  - id: tremor
+    nombre: "Tremor"
+    tipo: libreria
+    framework: [react]
+    licencia: Apache-2.0
+    licencia_gratis: true
+    repo: https://github.com/tremorlabs/tremor
+    demo: https://blocks.tremor.so/
+    instalacion: "npm install @tremor/react"
+    estado: activa
+    top_pick: true
+    nota: "+35 componentes de gráficas/KPIs. Adquirida por Vercel, mantenimiento activo."
+
+  - id: shadcn-dashboard-starters
+    nombre: "Starters de dashboard shadcn (satnaing / Kiranism / arhamkhnz / marmelab)"
+    tipo: plantilla
+    framework: [react]
+    licencia: MIT
+    licencia_gratis: true
+    repo: "shadcn-admin (satnaing) | next-shadcn-dashboard-starter (Kiranism) | Studio Admin (arhamkhnz) | shadcn-admin-kit (marmelab)"
+    demo: null
+    instalacion: "git clone / npx"
+    estado: activa
+    top_pick: true
+    nota: "shadcn-admin-kit está pensado justo para panel CRUD sobre una API existente — encaja con backend Laravel. Studio Admin trae 5 variantes."
+
+  - id: mosaic-lite
+    nombre: "Mosaic Lite (Cruip)"
+    tipo: plantilla
+    framework: [react, vue3]
+    licencia: "GPL-3.0 (Lite gratis / Pro freemium)"
+    licencia_gratis: true
+    repo: https://github.com/cruip/tailwind-dashboard-template
+    demo: https://mosaic.cruip.com/
+    instalacion: "git clone"
+    estado: activa
+    top_pick: false
+    nota: "Buena paleta y gráficas Chart.js ya configuradas."
+
+  - id: horizon-ui
+    nombre: "Horizon UI Tailwind"
+    tipo: plantilla
+    framework: [react]
+    licencia: "MIT (base) / Pro freemium"
+    licencia_gratis: true
+    repo: https://github.com/horizon-ui/horizon-tailwind-react
+    demo: https://horizon-ui.com/horizon-tailwind-react/
+    instalacion: "git clone"
+    estado: activa
+    top_pick: false
+    nota: "Estilo vibrante/redondeado — Web3, fintech, IA."
+
+  - id: material-tailwind-dashboard
+    nombre: "Material Tailwind Dashboard React"
+    tipo: plantilla
+    framework: [react]
+    licencia: "MIT (base) / Pro freemium"
+    licencia_gratis: true
+    repo: https://github.com/creativetimofficial/material-tailwind-dashboard-react
+    demo: "https://demos.creative-tim.com/material-tailwind-dashboard-react/#/dashboard/home"
+    instalacion: "git clone"
+    estado: mantenimiento_moderado
+    top_pick: false
+    nota: "Últimos commits fuertes 2024-2025, vigilar actividad antes de usar en proyecto nuevo."
+
+librerias_alternativas:
+  # Candidatas con buena valoración de comunidad pero que no son Tailwind-first.
+  # Usar cuando el proyecto no dependa de Tailwind o cuando Tailwind no resuelva bien el caso.
+  - id: shoelace
+    nombre: "Shoelace (Web Awesome)"
+    tipo: libreria
+    framework: ["agnostico (web components)"]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/shoelace-style/shoelace
+    demo: https://shoelace.style/
+    instalacion: "npm install @shoelace-style/shoelace"
+    estado: activa
+    top_pick: false
+    nota: "Web Components nativos — funcionan igual en Vue y React sin atarte a ningún framework. Útil si un proyecto necesita componentes compartidos entre stacks distintos."
+
+  - id: mantine
+    nombre: "Mantine"
+    tipo: libreria
+    framework: [react]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/mantinedev/mantine
+    demo: https://mantine.dev/
+    instalacion: "npm install @mantine/core"
+    estado: activa
+    top_pick: false
+    nota: "Bien valorada por devs (4.4/5 en reseñas agregadas) — madura y estable. No es Tailwind-first (usa CSS Modules), considerar solo si Tailwind no encaja con el proyecto."
+
+  - id: chakra-ui
+    nombre: "Chakra UI"
+    tipo: libreria
+    framework: [react]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/chakra-ui/chakra-ui
+    demo: https://www.chakra-ui.com/
+    instalacion: "npm install @chakra-ui/react"
+    estado: activa
+    top_pick: false
+    nota: "Buena flexibilidad sin abrumar con demasiados componentes. Mismo caso que Mantine: no es Tailwind-first."
+
+admin_panel:
+  - id: primevue-primereact
+    nombre: "PrimeVue / PrimeReact (con Tailwind)"
+    tipo: libreria
+    framework: [vue3, react]
+    licencia: MIT
+    licencia_gratis: true
+    repo: "https://github.com/primefaces/primevue | https://github.com/primefaces/primereact"
+    demo: "https://primevue.org/datatable/ | https://primereact.org/datatable/"
+    instalacion: "npm install primevue"
+    estado: activa
+    top_pick: true
+    nota: "Las mejores DataTables (filtros, export, edición). Valorada 4.1/5 por devs en reseñas agregadas."
+
+  - id: tailadmin
+    nombre: "TailAdmin"
+    tipo: plantilla
+    framework: [react, vue3]
+    licencia: "MIT (base) / Pro freemium"
+    licencia_gratis: true
+    repo: "https://github.com/TailAdmin/free-react-tailwind-admin-dashboard | https://github.com/TailAdmin/vue-tailwind-admin-dashboard"
+    demo: https://free-react-demo.tailadmin.com/
+    instalacion: "git clone"
+    estado: activa
+    top_pick: true
+    nota: "Uno de los paneles gratis más completos: formularios, tablas, calendario, auth. Revisar también tailadmin-laravel si existe versión Blade."
+
+  - id: preline
+    nombre: "Preline UI"
+    tipo: "libreria + plantillas"
+    framework: [vue3, react, html]
+    licencia: "MIT (base) / Pro freemium"
+    licencia_gratis: true
+    repo: https://github.com/htmlstreamofficial/preline
+    demo: https://preline.co/examples/admin-dashboards.html
+    instalacion: "npm install preline"
+    estado: activa
+    top_pick: false
+    nota: "Librería enorme con ejemplos de dashboards admin completos ya armados."
+
+  - id: heroui
+    nombre: "HeroUI (antes NextUI)"
+    tipo: libreria
+    framework: [react]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/heroui-inc/heroui
+    demo: https://www.heroui.com/docs/components/table
+    instalacion: "npm install @heroui/react"
+    estado: activa
+    top_pick: false
+    nota: "Micro-interacciones tipo app nativa."
+
+  - id: windmill-dashboard
+    nombre: "Windmill Dashboard React"
+    tipo: plantilla
+    framework: [react]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/estevanmaito/windmill-dashboard-react
+    demo: https://windmill-dashboard-react.vercel.app/
+    instalacion: "git clone"
+    estado: legacy
+    top_pick: false
+    nota: "⚠️ Sin commits desde ~2021-2022. No usar como base de proyecto nuevo, solo referencia visual."
+
+landing_page:
+  - id: magic-ui
+    nombre: "Magic UI"
+    tipo: libreria
+    framework: [react]
+    licencia: "MIT (base) / Pro freemium"
+    licencia_gratis: true
+    repo: https://github.com/magicuidesign/magicui
+    demo: https://magicui.design/docs/components/bento-grid
+    instalacion: "npx shadcn@latest add [componente de magicui]"
+    estado: activa
+    top_pick: true
+    nota: "Bento grids animados, partículas, marquesinas. Muy activa en 2026."
+
+  - id: aceternity-ui
+    nombre: "Aceternity UI"
+    tipo: libreria
+    framework: [react]
+    licencia: "Freemium (base gratis / All-Access de pago)"
+    licencia_gratis: true
+    repo: "https://ui.aceternity.com/ (sin repo público único, copy-paste manual)"
+    demo: https://ui.aceternity.com/components
+    instalacion: "copy-paste manual desde el sitio"
+    estado: activa
+    top_pick: false
+    nota: "No se instala vía npm — es código que copias manualmente. Avisar esto en la skill."
+
+  - id: inspira-ui
+    nombre: "Inspira UI (equivalente Vue de Aceternity/Magic UI)"
+    tipo: libreria
+    framework: [vue3]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/unovue/inspira-ui
+    demo: https://inspira-ui.com/components
+    instalacion: "npx shadcn-vue@latest add [componente]"
+    estado: activa
+    top_pick: true
+    nota: "Para proyectos Vue que quieran el estilo 'startup IA' sin depender de React."
+
+  - id: astrowind
+    nombre: "AstroWind"
+    tipo: plantilla
+    framework: ["astro/html tailwind"]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/onwidget/astrowind
+    demo: https://astrowind.vercel.app/
+    instalacion: "git clone"
+    estado: activa
+    top_pick: false
+    nota: "Es para Astro, pero el marcado Tailwind puro sirve para extraer layouts hacia Blade/Inertia."
+
+  - id: tailnext
+    nombre: "TailNext"
+    tipo: plantilla
+    framework: [react]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/onwidget/tailnext
+    demo: https://tailnext.vercel.app/
+    instalacion: "git clone"
+    estado: mantenimiento_moderado
+    top_pick: false
+    nota: "Hero, pricing, FAQs, contacto. Commits 2024-2025, vigilar actividad."
+
+  - id: float-ui
+    nombre: "Float UI"
+    tipo: libreria
+    framework: [react, vue3]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/MarsX-dev/floatui
+    demo: https://floatui.com/components
+    instalacion: "copy-paste"
+    estado: mantenimiento_moderado
+    top_pick: false
+    nota: "Estable pero pocos commits recientes."
+
+ecommerce:
+  - id: medusa-ui
+    nombre: "Medusa UI (@medusajs/ui)"
+    tipo: libreria
+    framework: [react]
+    licencia: MIT
+    licencia_gratis: true
+    repo: "https://github.com/medusajs/medusa/tree/develop/packages/design-system/ui"
+    demo: https://docs.medusajs.com/ui
+    instalacion: "npm install @medusajs/ui"
+    estado: activa
+    top_pick: true
+    nota: "Estética Linear/Stripe. Muy activa con Medusa v2."
+
+  - id: storefront-ui
+    nombre: "Storefront UI 2 (Alokai)"
+    tipo: libreria
+    framework: [vue3, react]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/vuestorefront/storefront-ui
+    demo: https://docs.storefrontui.io/v2/vue/blocks.html
+    instalacion: "npm install @storefront-ui/vue"
+    estado: activa
+    top_pick: true
+    nota: "Galerías, tallas, carritos, mega-menús, checkout. Pensado específicamente para retail."
+
+  - id: daisyui
+    nombre: "daisyUI"
+    tipo: libreria
+    framework: [vue3, react]
+    licencia: "MIT (librería) / plantillas de pago aparte"
+    licencia_gratis: true
+    repo: https://github.com/saadeghi/daisyui
+    demo: https://daisyui.com/components/card/
+    instalacion: "npm install daisyui"
+    estado: activa
+    top_pick: false
+    nota: "daisyUI 5 ya soporta Tailwind v4. Multi-tema cambiando un atributo HTML."
+
+  - id: flowbite-ecommerce
+    nombre: "Flowbite E-Commerce Blocks"
+    tipo: libreria
+    framework: [vue3, react]
+    licencia: "MIT (base) / Pro freemium"
+    licencia_gratis: true
+    repo: https://github.com/themesberg/flowbite
+    demo: https://flowbite.com/blocks/e-commerce/product-categories/
+    instalacion: "npm install flowbite"
+    estado: activa
+    top_pick: false
+    nota: null
+
+  - id: ripple-ui
+    nombre: "Ripple UI"
+    tipo: libreria
+    framework: [vue3, react]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/Siumauricio/rippleui
+    demo: https://www.ripple-ui.com/docs/components/drawer
+    instalacion: "npm install rippleui"
+    estado: legacy
+    top_pick: false
+    nota: "⚠️ Sin actualizaciones desde ~2023. Usar solo si necesitas específicamente sus drawers y nada más sirve mejor."
+
+app_movil:
+  - id: konsta-ui
+    nombre: "Konsta UI"
+    tipo: libreria
+    framework: [vue3, react]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/konstaui/konsta
+    demo: https://konstaui.com/kitchen-sink
+    instalacion: "npm install konsta"
+    estado: activa
+    top_pick: true
+    nota: "Renderiza con Tailwind el diseño exacto de iOS (Cupertino) y Android (Material You). Soporte Tailwind v4."
+
+  - id: vaul
+    nombre: "Vaul (React) / Vaul-Vue"
+    tipo: libreria
+    framework: [react, vue3]
+    licencia: MIT
+    licencia_gratis: true
+    repo: "https://github.com/emilkowalski/vaul | https://github.com/unovue/vaul-vue"
+    demo: https://vaul.emilkowal.ski/
+    instalacion: "npm install vaul"
+    estado: activa
+    top_pick: false
+    nota: "Bottom sheets con física real de iOS. React declarado 'feature-complete', Vaul-Vue sigue activo."
+
+  - id: vant
+    nombre: "Vant 4"
+    tipo: libreria
+    framework: [vue3]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/youzan/vant
+    demo: "https://vant-ui.github.io/vant/#/en-US"
+    instalacion: "npm install vant"
+    estado: activa
+    top_pick: true
+    nota: "+80 componentes táctiles optimizados. Muy activa en 2026. Buena para delivery/superapps en Vue."
+
+  - id: ant-design-mobile
+    nombre: "Ant Design Mobile"
+    tipo: libreria
+    framework: [react]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/ant-design/ant-design-mobile
+    demo: https://mobile.ant.design/components/button
+    instalacion: "npm install antd-mobile"
+    estado: activa
+    top_pick: false
+    nota: "Teclados numéricos, pull-to-refresh, swipe actions."
+
+  - id: headless-ui
+    nombre: "Headless UI"
+    tipo: libreria
+    framework: [vue3, react]
+    licencia: MIT
+    licencia_gratis: true
+    repo: https://github.com/tailwindlabs/headlessui
+    demo: https://headlessui.com/react/dialog
+    instalacion: "npm install @headlessui/vue"
+    estado: activa
+    top_pick: false
+    nota: "Primitivas sin estilo — bloqueo de scroll, foco, transiciones. Mantenida por Tailwind Labs."
+
+# Mapeo: tipo de proyecto -> qué categorías/componentes necesita típicamente
+# La skill usa esto para traducir "quiero hacer un app X" a categorías del catálogo
+mapeo_proyecto_componentes:
+  app_deportiva: [dashboard, admin_panel]
+  # cards de stats, gráficas, calendario de partidos, tablas de posiciones, perfiles de jugador
+  saas_b2b: [starter_kit, dashboard, admin_panel]
+  crm: [starter_kit, admin_panel]
+  tienda_online: [ecommerce, landing_page]
+  landing_producto: [landing_page]
+  sitio_institucional: [landing_page]
+  app_movil_hibrida: [app_movil, starter_kit]
+  intranet_erp: [admin_panel]
+  blog_contenido: [landing_page]
