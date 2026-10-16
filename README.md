@@ -8,7 +8,7 @@ stack de Ray / Devizac (Laravel + Inertia.js + Vue 3 / React + Tailwind).
 
 | Skill | Qué hace |
 |---|---|
-| `orquestador-frontend/` | Router + director de arte: al describir un proyecto nuevo, decide sola cuáles otras skills usar (catálogo de UI, dirección de arte, animación de scroll) y traduce lo que describes en términos vagos a instrucciones técnicas concretas. **Instálala — ella instala las demás sola la primera vez que la usas** (ver su Paso 0). |
+| `orquestador-frontend/` | Router + director de arte: al describir un proyecto nuevo, decide sola cuáles otras skills usar (catálogo de UI, dirección de arte, animación de scroll), aplica la marca del cliente si ya existe (`marcas/`), revisa accesibilidad/legibilidad según sea sitio o presentación (`accesibilidad.md`), verifica el resultado antes de entregarlo, y traduce lo que describes en términos vagos a instrucciones técnicas concretas. **Instálala — ella instala las demás sola la primera vez que la usas** (ver su Paso 0). |
 | `elegir-ui/` | Catálogo curado (`catalogo.yaml`, 30+ entradas) de librerías de componentes y plantillas open source gratuitas, organizadas por categoría (dashboard, admin panel, landing, e-commerce, app móvil), con licencia, estado de mantenimiento y "top pick" por categoría. |
 
 ## Skills de terceros que completan el kit

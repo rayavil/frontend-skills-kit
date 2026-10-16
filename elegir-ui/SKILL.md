@@ -18,7 +18,7 @@ Esta skill recomienda sistemas de UI y plantillas open source **100% gratuitas o
    - Si una entrada tiene `estado: mantenimiento_moderado`, acláralo (no la descartes, pero avisa).
 5. **Presenta 2-3 opciones máximo** por categoría relevante, no la lista completa. Para cada una da: nombre, por qué encaja con el caso, tipo (plantilla vs librería), link al repo y a la demo si existe, y el comando de instalación.
 6. **Si es "plantilla"**, aclara que es una base ya armada (ahorra tiempo, pero hay que acoplarla a Laravel/Inertia). Si es "librería", aclara que son piezas para ensamblar tú (más control, más trabajo de armado).
-7. **Verifica antes de prometer**: si ha pasado tiempo desde la última actualización del catálogo o la entrada no tiene `top_pick`, sugiere confirmar con una búsqueda rápida que el repo siga vivo antes de que Ray invierta tiempo instalándolo.
+7. **Revalida antes de prometer**: cada entrada tiene un campo `ultima_verificacion` (fecha). Antes de recomendar una entrada `top_pick: true` cuya `ultima_verificacion` tenga más de 6 meses, haz una verificación rápida (búsqueda web o revisar el repo de GitHub) de que siga activa — estrellas, último commit. Si sigue viva, actualiza el campo a la fecha de hoy. Si encuentras que ya no tiene actividad reciente, dile a Ray explícitamente ("esta ya no se actualiza desde hace X, te recomiendo Y en su lugar") y cambia su `estado` a `legacy` en el mismo momento, no solo se lo menciones de palabra. Para entradas sin `top_pick`, no hace falta revalidar en automático — basta la revisión rápida que ya hacía el flujo.
 
 ## Actualizar el catálogo
 

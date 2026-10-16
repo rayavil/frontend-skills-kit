@@ -9,6 +9,9 @@
 #   estado: "activa" | "mantenimiento_moderado" | "legacy" (evitar)
 #   top_pick: true = primera opción recomendada en su categoría para el stack de Ray
 #   instalacion: cómo se obtiene (npm/composer/copy-paste/git clone)
+#   ultima_verificacion: fecha (YYYY-MM-DD) de la última vez que se confirmó actividad/estrellas.
+#     Si han pasado más de 6 meses y la entrada es top_pick, revalidar antes de recomendarla
+#     (ver elegir-ui/SKILL.md, sección de mantenimiento).
 
 starter_kit:
   - id: laravel-breeze
@@ -22,6 +25,7 @@ starter_kit:
     instalacion: "composer require laravel/breeze --dev && php artisan breeze:install"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Oficial de Laravel. Considerar laravel/vue-starter-kit como reemplazo moderno (ver abajo)."
 
   - id: laravel-vue-starter-kit
@@ -35,6 +39,7 @@ starter_kit:
     instalacion: "laravel new --vue"
     estado: activa
     top_pick: true
+    ultima_verificacion: "2026-10-16"
     nota: "Reemplazo moderno de Breeze. Punto de partida por defecto para nuevos proyectos Inertia+Vue."
 
   - id: pingcrm
@@ -48,6 +53,7 @@ starter_kit:
     instalacion: "git clone"
     estado: activa
     top_pick: true
+    ultima_verificacion: "2026-10-16"
     nota: "Mejor referencia real de cómo estructurar un CRM/admin completo en Laravel+Inertia. Útil como esqueleto, no solo como UI."
 
   - id: shadcn-ui
@@ -61,6 +67,7 @@ starter_kit:
     instalacion: "npx shadcn@latest init"
     estado: activa
     top_pick: true
+    ultima_verificacion: "2026-10-16"
     nota: "#1 mejor valorada por la comunidad dev (4.6-4.8/5 en reseñas agregadas). Control total del código, se copia a tu repo."
 
   - id: sakai
@@ -74,6 +81,7 @@ starter_kit:
     instalacion: "git clone"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Dashboard completo con menú, gráficas y páginas. Integrable en resources/js de Inertia."
 
   - id: admin-one-vue-tailwind
@@ -87,6 +95,7 @@ starter_kit:
     instalacion: "git clone"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Guía oficial para integrarse sobre Breeze + Inertia."
 
   - id: flowbite
@@ -100,6 +109,7 @@ starter_kit:
     instalacion: "npm install flowbite-vue / flowbite-react"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Solo usar el core gratis; los bloques 'Pro' no cuentan como libres."
 
 dashboard:
@@ -114,6 +124,7 @@ dashboard:
     instalacion: "git clone / npm"
     estado: activa
     top_pick: true
+    ultima_verificacion: "2026-10-16"
     nota: "10,964 estrellas en GitHub. Vue 3 + Vite + Pinia + Tailwind. La mejor plantilla de admin en Vue encontrada en esta ronda — no estaba en el catálogo inicial."
 
   - id: tremor
@@ -127,6 +138,7 @@ dashboard:
     instalacion: "npm install @tremor/react"
     estado: activa
     top_pick: true
+    ultima_verificacion: "2026-10-16"
     nota: "+35 componentes de gráficas/KPIs. Adquirida por Vercel, mantenimiento activo."
 
   - id: shadcn-dashboard-starters
@@ -140,6 +152,7 @@ dashboard:
     instalacion: "git clone / npx"
     estado: activa
     top_pick: true
+    ultima_verificacion: "2026-10-16"
     nota: "shadcn-admin-kit está pensado justo para panel CRUD sobre una API existente — encaja con backend Laravel. Studio Admin trae 5 variantes."
 
   - id: mosaic-lite
@@ -153,6 +166,7 @@ dashboard:
     instalacion: "git clone"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Buena paleta y gráficas Chart.js ya configuradas."
 
   - id: horizon-ui
@@ -166,6 +180,7 @@ dashboard:
     instalacion: "git clone"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Estilo vibrante/redondeado — Web3, fintech, IA."
 
   - id: material-tailwind-dashboard
@@ -179,6 +194,7 @@ dashboard:
     instalacion: "git clone"
     estado: mantenimiento_moderado
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Últimos commits fuertes 2024-2025, vigilar actividad antes de usar en proyecto nuevo."
 
 librerias_alternativas:
@@ -195,6 +211,7 @@ librerias_alternativas:
     instalacion: "npm install @shoelace-style/shoelace"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Web Components nativos — funcionan igual en Vue y React sin atarte a ningún framework. Útil si un proyecto necesita componentes compartidos entre stacks distintos."
 
   - id: mantine
@@ -208,6 +225,7 @@ librerias_alternativas:
     instalacion: "npm install @mantine/core"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Bien valorada por devs (4.4/5 en reseñas agregadas) — madura y estable. No es Tailwind-first (usa CSS Modules), considerar solo si Tailwind no encaja con el proyecto."
 
   - id: chakra-ui
@@ -221,6 +239,7 @@ librerias_alternativas:
     instalacion: "npm install @chakra-ui/react"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Buena flexibilidad sin abrumar con demasiados componentes. Mismo caso que Mantine: no es Tailwind-first."
 
 admin_panel:
@@ -235,6 +254,7 @@ admin_panel:
     instalacion: "npm install primevue"
     estado: activa
     top_pick: true
+    ultima_verificacion: "2026-10-16"
     nota: "Las mejores DataTables (filtros, export, edición). Valorada 4.1/5 por devs en reseñas agregadas."
 
   - id: tailadmin
@@ -248,6 +268,7 @@ admin_panel:
     instalacion: "git clone"
     estado: activa
     top_pick: true
+    ultima_verificacion: "2026-10-16"
     nota: "Uno de los paneles gratis más completos: formularios, tablas, calendario, auth. Revisar también tailadmin-laravel si existe versión Blade."
 
   - id: preline
@@ -261,6 +282,7 @@ admin_panel:
     instalacion: "npm install preline"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Librería enorme con ejemplos de dashboards admin completos ya armados."
 
   - id: heroui
@@ -274,6 +296,7 @@ admin_panel:
     instalacion: "npm install @heroui/react"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Micro-interacciones tipo app nativa."
 
   - id: windmill-dashboard
@@ -287,6 +310,7 @@ admin_panel:
     instalacion: "git clone"
     estado: legacy
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "⚠️ Sin commits desde ~2021-2022. No usar como base de proyecto nuevo, solo referencia visual."
 
 landing_page:
@@ -301,6 +325,7 @@ landing_page:
     instalacion: "npx shadcn@latest add [componente de magicui]"
     estado: activa
     top_pick: true
+    ultima_verificacion: "2026-10-16"
     nota: "Bento grids animados, partículas, marquesinas. Muy activa en 2026."
 
   - id: aceternity-ui
@@ -314,6 +339,7 @@ landing_page:
     instalacion: "copy-paste manual desde el sitio"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "No se instala vía npm — es código que copias manualmente. Avisar esto en la skill."
 
   - id: inspira-ui
@@ -327,6 +353,7 @@ landing_page:
     instalacion: "npx shadcn-vue@latest add [componente]"
     estado: activa
     top_pick: true
+    ultima_verificacion: "2026-10-16"
     nota: "Para proyectos Vue que quieran el estilo 'startup IA' sin depender de React."
 
   - id: astrowind
@@ -340,6 +367,7 @@ landing_page:
     instalacion: "git clone"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Es para Astro, pero el marcado Tailwind puro sirve para extraer layouts hacia Blade/Inertia."
 
   - id: tailnext
@@ -353,6 +381,7 @@ landing_page:
     instalacion: "git clone"
     estado: mantenimiento_moderado
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Hero, pricing, FAQs, contacto. Commits 2024-2025, vigilar actividad."
 
   - id: float-ui
@@ -366,6 +395,7 @@ landing_page:
     instalacion: "copy-paste"
     estado: mantenimiento_moderado
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Estable pero pocos commits recientes."
 
 ecommerce:
@@ -380,6 +410,7 @@ ecommerce:
     instalacion: "npm install @medusajs/ui"
     estado: activa
     top_pick: true
+    ultima_verificacion: "2026-10-16"
     nota: "Estética Linear/Stripe. Muy activa con Medusa v2."
 
   - id: storefront-ui
@@ -393,6 +424,7 @@ ecommerce:
     instalacion: "npm install @storefront-ui/vue"
     estado: activa
     top_pick: true
+    ultima_verificacion: "2026-10-16"
     nota: "Galerías, tallas, carritos, mega-menús, checkout. Pensado específicamente para retail."
 
   - id: daisyui
@@ -406,6 +438,7 @@ ecommerce:
     instalacion: "npm install daisyui"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "daisyUI 5 ya soporta Tailwind v4. Multi-tema cambiando un atributo HTML."
 
   - id: flowbite-ecommerce
@@ -419,6 +452,7 @@ ecommerce:
     instalacion: "npm install flowbite"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: null
 
   - id: ripple-ui
@@ -432,6 +466,7 @@ ecommerce:
     instalacion: "npm install rippleui"
     estado: legacy
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "⚠️ Sin actualizaciones desde ~2023. Usar solo si necesitas específicamente sus drawers y nada más sirve mejor."
 
 app_movil:
@@ -446,6 +481,7 @@ app_movil:
     instalacion: "npm install konsta"
     estado: activa
     top_pick: true
+    ultima_verificacion: "2026-10-16"
     nota: "Renderiza con Tailwind el diseño exacto de iOS (Cupertino) y Android (Material You). Soporte Tailwind v4."
 
   - id: vaul
@@ -459,6 +495,7 @@ app_movil:
     instalacion: "npm install vaul"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Bottom sheets con física real de iOS. React declarado 'feature-complete', Vaul-Vue sigue activo."
 
   - id: vant
@@ -472,6 +509,7 @@ app_movil:
     instalacion: "npm install vant"
     estado: activa
     top_pick: true
+    ultima_verificacion: "2026-10-16"
     nota: "+80 componentes táctiles optimizados. Muy activa en 2026. Buena para delivery/superapps en Vue."
 
   - id: ant-design-mobile
@@ -485,6 +523,7 @@ app_movil:
     instalacion: "npm install antd-mobile"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Teclados numéricos, pull-to-refresh, swipe actions."
 
   - id: headless-ui
@@ -498,6 +537,7 @@ app_movil:
     instalacion: "npm install @headlessui/vue"
     estado: activa
     top_pick: false
+    ultima_verificacion: "2026-10-16"
     nota: "Primitivas sin estilo — bloqueo de scroll, foco, transiciones. Mantenida por Tailwind Labs."
 
 # Mapeo: tipo de proyecto -> qué categorías/componentes necesita típicamente

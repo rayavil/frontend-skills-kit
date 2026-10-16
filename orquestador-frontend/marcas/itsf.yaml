@@ -1,0 +1,25 @@
+# Perfil de marca — Instituto Tecnológico Superior de Fresnillo (ITSF / TecNM)
+# Generado desde las notas de marca de Ray. Revisar/actualizar si la guía oficial cambia.
+
+cliente: ITSF
+alias: ["Tec", "Tecnológico", "TecNM Fresnillo", "Instituto Tecnológico Superior de Fresnillo"]
+ultima_verificacion: "2026-10-16"
+
+paleta:
+  primario: "#003366"       # navy institucional
+  acento: "#7a1f3d"          # guinda/vino — NO usar el rojo duro oficial #c8102e salvo que Ray lo pida explícito
+  neutro_claro: "#f2f2f2"
+  nota: "El acento guinda es una interpretación suave del rojo oficial; confirma con Ray si el proyecto exige el rojo duro institucional en vez de este tono."
+
+tipografia:
+  familia: "Noto (Noto Sans / Noto Serif según jerarquía)"
+
+tono_visual:
+  - "Moderno, con gradientes sutiles para contenido dirigido a jóvenes (promoción a bachilleratos, redes sociales)"
+  - "Más sobrio/institucional (menos gradiente, más espacio en blanco) para documentos y presentaciones formales (informes, juntas directivas)"
+  - "Evitar glassmorphism y badge-pills genéricos — no es parte de la identidad ITSF, es un patrón de IA que ya salió mal una vez"
+
+uso_recomendado:
+  - "Presentaciones de promoción a bachilleratos: paleta completa + tono moderno/gradiente, pensado para pantalla/proyector"
+  - "Sitio institucional (itsf.mx): paleta completa + tono sobrio"
+  - "Documentos internos: navy + gris, minimizar guinda a solo acentos puntuales"

@@ -1,6 +1,6 @@
 ---
 name: orquestador-frontend
-description: Usar SIEMPRE que Ray empiece un proyecto de frontend nuevo (webapp, dashboard, SaaS, tienda online, landing page, sitio institucional, presentación ejecutiva en navegador, app móvil), pida corregir/mejorar uno que ya se ve "genérico", "feo" o "como de IA", o pida verificar/instalar sus dependencias en un equipo nuevo. Esta skill decide por sí sola a cuáles otras skills del kit de Ray recurrir (elegir-ui para plantillas/componentes, frontend-design + taste-skill para dirección de arte, cinematic-gsap-lenis-motion-system + scrollytelling + gsap-skills para animación premium por scroll) según el tipo de proyecto, y hace de intérprete entre lo que Ray describe en términos vagos y las instrucciones técnicas concretas que cada skill necesita. Dispara con frases como "vamos a hacer...", "necesito un sitio/app/tienda/presentación de...", "arma el frontend de...", "esto se ve feo/genérico", "checa que tenga todo instalado", "verifica mis skills de frontend".
+description: Usar SIEMPRE que Ray empiece un proyecto de frontend nuevo (webapp, dashboard, SaaS, tienda online, landing page, sitio institucional, presentación ejecutiva en navegador, app móvil), pida corregir/mejorar uno que ya se ve "genérico", "feo" o "como de IA", o pida verificar/instalar sus dependencias en un equipo nuevo. Esta skill decide por sí sola a cuáles otras skills del kit de Ray recurrir (elegir-ui para plantillas/componentes, frontend-design + taste-skill para dirección de arte, cinematic-gsap-lenis-motion-system + scrollytelling + gsap-skills para animación premium por scroll) según el tipo de proyecto, aplica la marca del cliente si ya existe un perfil guardado, revisa accesibilidad/legibilidad según sea sitio web o presentación, verifica el resultado antes de entregarlo, y hace de intérprete entre lo que Ray describe en términos vagos y las instrucciones técnicas concretas que cada skill necesita. Dispara con frases como "vamos a hacer...", "necesito un sitio/app/tienda/presentación de...", "arma el frontend de...", "esto se ve feo/genérico", "checa que tenga todo instalado", "verifica mis skills de frontend".
 ---
 
 # Orquestador de frontend
@@ -51,6 +51,22 @@ todo instalado en este equipo" o "verifica mis skills de frontend", corre única
 y repórtale qué encontraste y qué instalaste — no sigas a los pasos 1-3, no hay proyecto que
 clasificar todavía.
 
+## Paso 0.5 — Marca del cliente (antes de la dirección de arte)
+
+Antes de proponer paleta/tipografía/tono (Paso 1.5), revisa si ya existe un perfil de marca para
+este cliente en `marcas/<cliente>.yaml` (en esta misma carpeta).
+
+- **Si existe:** úsalo como base de la dirección de arte — no le vuelvas a preguntar a Ray colores
+  ni tipografía que ya están documentados. Si el proyecto necesita un matiz distinto (ej. "más
+  sobrio" vs "más moderno"), revisa si el archivo ya distingue por tipo de uso (`uso_recomendado`)
+  antes de preguntar.
+- **Si no existe** y el proyecto es para un cliente/marca recurrente (no un ejercicio de muestra):
+  pregúntale a Ray los datos básicos (colores institucionales, tipografía, tono/personalidad de
+  marca) y, al terminar el proyecto, ofrece guardarlos en un `marcas/<cliente>.yaml` nuevo (mismo
+  formato que `marcas/itsf.yaml`) para no tener que preguntarlos otra vez la próxima vez.
+- **Si es un ejercicio de muestra** (ej. "una cafetería de prueba" sin cliente real detrás), no
+  apliques esto — ahí la dirección de arte se decide desde cero en el Paso 1.5.
+
 ## Paso 1 — Clasifica el proyecto
 
 Lee la descripción de Ray y ubícalo en una (o más) de estas categorías:
@@ -85,9 +101,11 @@ Filtra por categoría `app_movil`.
 Antes de tocar código:
 
 1. **Entiende el tono que busca Ray**, aunque lo describa vago. Si no dio referencias, pregúntale 1-2 cosas cortas: ¿tiene un sitio de referencia en mente (como palominoprod.com o jeffmilanes.com que ya usamos antes)? ¿es más minimalista/editorial o más oscuro/cinemático?
-2. **Consulta `frontend-design` y las skills de `taste-skill`** (`redesign-skill` si ya existe un archivo que corregir, `soft-skill` para tono premium/lujo, `minimalist-skill` para editorial) para fijar: paleta, tipografía, densidad visual, nivel de "experimentación" del layout. Esto define el **look en reposo** — cómo se ve el sitio sin animación.
+2. **Consulta `frontend-design` y las skills de `taste-skill`** (`redesign-skill` si ya existe un archivo que corregir, `soft-skill` para tono premium/lujo, `minimalist-skill` para editorial) para fijar: paleta, tipografía, densidad visual, nivel de "experimentación" del layout. Esto define el **look en reposo** — cómo se ve el sitio sin animación. Si el Paso 0.5 encontró un perfil de marca, esta paleta/tipografía parte de ahí, no se inventa.
 3. **Traduce ese look a una lista de efectos concretos** usando `tecnicas-animacion.md` (en esta misma carpeta). Si Ray describe un efecto sin saber su nombre (ej. "que la persona vaya cambiando con el scroll"), identifica cuál técnica del catálogo es y dilo en voz alta: *"eso es scroll-driven frame scrubbing — se puede, pero necesito que me des la secuencia de imágenes/fotos de la persona en cada pose."* Si la técnica requiere material que Ray no ha dado (fotos, video, secuencia de frames), pídelo ANTES de construir, no a medias.
-4. **Entrega las instrucciones técnicas ya traducidas** a las skills de ejecución (GSAP/Lenis/ScrollTrigger) — ellas no deciden el diseño, solo ejecutan lo que esta capa ya definió.
+4. **Checklist de contenido real** (para TODAS las categorías, no solo cuando la animación lo exige): antes de escribir código, dile a Ray qué vas a necesitar y pregunta qué de eso ya tiene — copy/textos reales, logos, fotos propias, datos/cifras, info de contacto. Si algo no lo tiene todavía, acláraselo (ej. "voy a usar texto de relleno en la sección de testimonios, avísame cuando tengas los reales") en vez de entregar un demo con contenido inventado sin decir cuál es cuál.
+5. **Decide si esto es sitio web o presentación** y aplica las reglas que correspondan de `accesibilidad.md` (en esta misma carpeta) — las reglas de accesibilidad web (contraste, teclado, `prefers-reduced-motion`, tamaño de touch targets) NO son las mismas que las directrices de diseño de presentación (tamaño de texto legible a distancia, tratamiento de imágenes/gráficos, densidad de información tipo slide). Una presentación para proyectar en un auditorio sigue reglas de presentación, no de sitio web, aunque técnicamente sea una página HTML.
+6. **Entrega las instrucciones técnicas ya traducidas** a las skills de ejecución (GSAP/Lenis/ScrollTrigger) — ellas no deciden el diseño, solo ejecutan lo que esta capa ya definió.
 
 ## Paso 3 — Resume la decisión antes de construir
 
@@ -95,6 +113,31 @@ Antes de escribir código, dile a Ray en una línea qué ruta tomaste y por qué
 > "Esto es más presentación que panel funcional, así que voy con tono editorial/minimalista (taste-skill) + scroll-driven frame scrubbing para la portada, y GSAP+Lenis para las transiciones entre secciones."
 
 Esto le permite corregirte rápido si clasificaste mal el proyecto, o si la dirección de arte no es la que imaginaba, antes de que inviertas tiempo construyendo.
+
+## Paso 4 — Verifica antes de decir que ya está
+
+No reportes el entregable como terminado sin antes revisar esto:
+
+1. **Revisión estática del código**: busca en el HTML/JS generado los valores de `pin`, `end` y
+   `pinSpacing` de cada `ScrollTrigger` y confirma que el `end` no exceda la altura real del
+   contenido anclado (esto fue exactamente el bug que salió en la versión anterior del sitio ITSF).
+   Confirma también que existe `<meta name="viewport">` y que las animaciones respetan
+   `prefers-reduced-motion` (ver `accesibilidad.md`).
+2. **Revisión visual**: si tienes una herramienta de navegador disponible en este entorno (Claude
+   in Chrome o el navegador integrado), abre el archivo ahí, haz scroll completo de principio a
+   fin y revisa la consola en busca de errores. Si no tienes navegador disponible, dile a Ray
+   explícitamente qué probar él mismo antes de darlo por bueno (ej. "ábrelo y haz scroll completo,
+   checa que la sección 2 no brinque al final del pin").
+3. Si encuentras un problema, corrígelo antes de entregar — no lo reportes como "ya quedó" con un
+   pendiente conocido sin decírselo a Ray explícitamente.
+
+## Paso 5 — Integración a tu stack (opcional, solo si Ray lo pide o aprueba el demo)
+
+El HTML autocontenido es para validar rápido el diseño y la animación. Una vez que Ray lo aprueba
+y el proyecto va a producción real (no un ejercicio de muestra), ofrécele convertirlo a
+componente(s) Vue 3 o React para integrarlo a su stack Laravel + Inertia.js — no asumas que el
+HTML suelto es el entregable final de un proyecto real; pregunta si quiere la versión componentizada
+ahora o más adelante.
 
 ## Mantenimiento
 
