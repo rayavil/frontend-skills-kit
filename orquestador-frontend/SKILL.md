@@ -7,6 +7,34 @@ description: Usar SIEMPRE que Ray empiece un proyecto de frontend nuevo (webapp,
 
 Esta skill tiene dos trabajos: **decide qué otras skills de Ray usar y en qué orden** según el tipo de proyecto, y **hace de director de arte** — traduce lo que Ray describe en términos vagos ("que se vea premium", "como que la persona va cambiando") a instrucciones técnicas concretas que las skills de ejecución (GSAP, Lenis, etc.) puedan construir. Ray no siempre sabe el nombre técnico de lo que imagina — este paso existe para que no tenga que saberlo.
 
+## Paso 0 — Verifica dependencias (solo la primera vez que se usa en un equipo)
+
+Esta skill depende de otras cinco. Antes de activar el Paso 1 por primera vez en una máquina,
+revisa si ya están instaladas (en Claude Code: `ls ~/.claude/skills/`). Si falta alguna, instálala
+tú mismo con estos comandos — no le pidas a Ray que los corra manualmente, para eso existe este
+paso:
+
+```bash
+# elegir-ui (catálogo de UI/plantillas) — viene en el mismo repo que esta skill
+# ya debería estar si clonaste frontend-skills-kit completo; si falta:
+cp -r <ruta-del-clon>/frontend-skills-kit/elegir-ui ~/.claude/skills/
+
+# Animación por scroll (motion)
+npx skills add https://github.com/greensock/gsap-skills --agent claude-code --global
+npx skills add https://github.com/MengTo/Skills --skill cinematic-gsap-lenis-motion-system --agent claude-code --global
+npx skills add doodledood/claude-code-plugins --skill scrollytelling --agent claude-code --global
+
+# Dirección de arte / taste
+npx skills add https://github.com/Leonxlnx/taste-skill --agent claude-code --global
+
+# Referencia visual
+npx skillscat add rshvr/elite-web-design/elite-inspiration
+```
+
+Si algún comando falla (nombre de paquete cambió, CLI no instalado, etc.), dile a Ray el error
+exacto y qué intentaste — no te quedes callado ni sigas como si hubiera funcionado. Una vez
+instalada una dependencia en una máquina, no vuelvas a correr su comando ahí.
+
 ## Paso 1 — Clasifica el proyecto
 
 Lee la descripción de Ray y ubícalo en una (o más) de estas categorías:

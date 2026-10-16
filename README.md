@@ -8,20 +8,18 @@ stack de Ray / Devizac (Laravel + Inertia.js + Vue 3 / React + Tailwind).
 
 | Skill | Qué hace |
 |---|---|
-| `orquestador-frontend/` | Router: al describir un proyecto nuevo, decide sola cuáles otras skills usar (catálogo de UI, o animación de scroll, o ambas). **Instálala para que las demás se activen solas.** |
+| `orquestador-frontend/` | Router + director de arte: al describir un proyecto nuevo, decide sola cuáles otras skills usar (catálogo de UI, dirección de arte, animación de scroll) y traduce lo que describes en términos vagos a instrucciones técnicas concretas. **Instálala — ella instala las demás sola la primera vez que la usas** (ver su Paso 0). |
 | `elegir-ui/` | Catálogo curado (`catalogo.yaml`, 30+ entradas) de librerías de componentes y plantillas open source gratuitas, organizadas por categoría (dashboard, admin panel, landing, e-commerce, app móvil), con licencia, estado de mantenimiento y "top pick" por categoría. |
 
 ## Skills de terceros que completan el kit
 
-Estas no se copian aquí (son de otros autores, se instalan directo desde su fuente). El
-`orquestador-frontend` las referencia por nombre, así que instálalas también si quieres el flujo
-completo de animación premium por scroll:
+No se copian aquí (son de otros autores). `orquestador-frontend` las instala sola la primera vez
+que se activa en un equipo nuevo (su Paso 0 trae los comandos exactos) — no necesitas correrlos
+tú a mano:
 
-```bash
-npx skills add https://github.com/greensock/gsap-skills --agent claude-code --global
-npx skills add https://github.com/MengTo/Skills --skill cinematic-gsap-lenis-motion-system --agent claude-code --global
-npx skills add doodledood/claude-code-plugins --skill scrollytelling --agent claude-code --global
-```
+- `gsap-skills`, `cinematic-gsap-lenis-motion-system`, `scrollytelling` — animación por scroll
+- `taste-skill` (familia: taste/redesign/soft/minimalist) — dirección de arte
+- `elite-inspiration` — índice de referencia visual
 
 ## Instalación en un equipo nuevo
 
@@ -34,7 +32,9 @@ cp -r frontend-skills-kit/elegir-ui ~/.claude/skills/
 cp -r frontend-skills-kit/orquestador-frontend ~/.claude/skills/
 ```
 
-(Agrega las 3 skills de terceros de arriba también, con `--global`.)
+Con eso basta. La primera vez que le pidas algo de frontend a Claude Code, `orquestador-frontend`
+revisa qué falta y lo instala — ver su Paso 0 si quieres correrlo tú manualmente de una vez en
+lugar de esperar a la primera activación.
 
 ### Antigravity
 
