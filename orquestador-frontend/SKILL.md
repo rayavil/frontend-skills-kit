@@ -132,9 +132,12 @@ No reportes el entregable como terminado sin antes revisar esto:
 2. **Auditoría de tamaños, si es presentación (categoría C en modo presentación)**: revisa en el
    CSS generado los `font-size` de títulos, cuerpo y cifras destacadas, y los tamaños de íconos y
    botones, contra la tabla de mínimos por escenario de `accesibilidad.md` (monitor propio / TV-sala
-   de juntas / proyector-auditorio) para el escenario que se fijó en el Paso 1.5. Si algún valor
-   queda por debajo del mínimo de ese escenario, corrígelo antes de entregar — no lo dejes para que
-   Ray lo note hasta que ya esté frente al grupo con el cañón.
+   de juntas / proyector-auditorio) para el escenario que se fijó en el Paso 1.5. Confirma también
+   que esos tamaños están definidos con `clamp()`/unidades relativas (`vw`), no `px` fijo — un `px`
+   fijo no garantiza el mismo tamaño físico en una pantalla/proyector distinto al que probaste. Si
+   algún valor queda por debajo del mínimo de ese escenario, o está en `px` fijo donde debería ser
+   fluido, corrígelo antes de entregar — no lo dejes para que Ray lo note hasta que ya esté frente
+   al grupo con el cañón.
 3. **Revisión visual**: si tienes una herramienta de navegador disponible en este entorno (Claude
    in Chrome o el navegador integrado), abre el archivo ahí, haz scroll completo de principio a
    fin y revisa la consola en busca de errores. Si no tienes navegador disponible, dile a Ray
