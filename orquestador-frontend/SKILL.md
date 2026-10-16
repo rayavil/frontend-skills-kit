@@ -110,7 +110,7 @@ Antes de tocar código:
 2. **Consulta `frontend-design` y las skills de `taste-skill`** (`redesign-skill` si ya existe un archivo que corregir, `soft-skill` para tono premium/lujo, `minimalist-skill` para editorial) para fijar: paleta, tipografía, densidad visual, nivel de "experimentación" del layout. Esto define el **look en reposo** — cómo se ve el sitio sin animación. Si el Paso 0.5 encontró un perfil de marca, esta paleta/tipografía parte de ahí, no se inventa.
 3. **Traduce ese look a una lista de efectos concretos** usando `tecnicas-animacion.md` (en esta misma carpeta). Si Ray describe un efecto sin saber su nombre (ej. "que la persona vaya cambiando con el scroll"), identifica cuál técnica del catálogo es y dilo en voz alta: *"eso es scroll-driven frame scrubbing — se puede, pero necesito que me des la secuencia de imágenes/fotos de la persona en cada pose."* Si la técnica requiere material que Ray no ha dado (fotos, video, secuencia de frames), pídelo ANTES de construir, no a medias.
 4. **Checklist de contenido real** (para TODAS las categorías, no solo cuando la animación lo exige): antes de escribir código, dile a Ray qué vas a necesitar y pregunta qué de eso ya tiene — copy/textos reales, logos, fotos propias, datos/cifras, info de contacto. Si algo no lo tiene todavía, acláraselo (ej. "voy a usar texto de relleno en la sección de testimonios, avísame cuando tengas los reales") en vez de entregar un demo con contenido inventado sin decir cuál es cuál.
-5. **Decide si esto es sitio web o presentación** y aplica las reglas que correspondan de `accesibilidad.md` (en esta misma carpeta) — las reglas de accesibilidad web (contraste, teclado, `prefers-reduced-motion`, tamaño de touch targets) NO son las mismas que las directrices de diseño de presentación (tamaño de texto legible a distancia, tratamiento de imágenes/gráficos, densidad de información tipo slide). Una presentación para proyectar en un auditorio sigue reglas de presentación, no de sitio web, aunque técnicamente sea una página HTML.
+5. **Decide si esto es sitio web o presentación** y aplica las reglas que correspondan de `accesibilidad.md` (en esta misma carpeta) — las reglas de accesibilidad web (contraste, teclado, `prefers-reduced-motion`, tamaño de touch targets) NO son las mismas que las directrices de diseño de presentación (tamaño de texto legible a distancia, tratamiento de imágenes/gráficos, densidad de información tipo slide). Una presentación para proyectar en un auditorio sigue reglas de presentación, no de sitio web, aunque técnicamente sea una página HTML. Si es presentación, pregunta o infiere además el escenario de distancia (monitor propio / TV-sala de juntas / proyector-auditorio) — `accesibilidad.md` trae una tabla de tamaños mínimos concretos por escenario, úsala para fijar los `font-size` y tamaños de ícono/botón desde el principio, no los ajustes después.
 6. **Entrega las instrucciones técnicas ya traducidas** a las skills de ejecución (GSAP/Lenis/ScrollTrigger) — ellas no deciden el diseño, solo ejecutan lo que esta capa ya definió.
 
 ## Paso 3 — Resume la decisión antes de construir
@@ -129,12 +129,18 @@ No reportes el entregable como terminado sin antes revisar esto:
    contenido anclado (esto fue exactamente el bug que salió en la versión anterior del sitio ITSF).
    Confirma también que existe `<meta name="viewport">` y que las animaciones respetan
    `prefers-reduced-motion` (ver `accesibilidad.md`).
-2. **Revisión visual**: si tienes una herramienta de navegador disponible en este entorno (Claude
+2. **Auditoría de tamaños, si es presentación (categoría C en modo presentación)**: revisa en el
+   CSS generado los `font-size` de títulos, cuerpo y cifras destacadas, y los tamaños de íconos y
+   botones, contra la tabla de mínimos por escenario de `accesibilidad.md` (monitor propio / TV-sala
+   de juntas / proyector-auditorio) para el escenario que se fijó en el Paso 1.5. Si algún valor
+   queda por debajo del mínimo de ese escenario, corrígelo antes de entregar — no lo dejes para que
+   Ray lo note hasta que ya esté frente al grupo con el cañón.
+3. **Revisión visual**: si tienes una herramienta de navegador disponible en este entorno (Claude
    in Chrome o el navegador integrado), abre el archivo ahí, haz scroll completo de principio a
    fin y revisa la consola en busca de errores. Si no tienes navegador disponible, dile a Ray
    explícitamente qué probar él mismo antes de darlo por bueno (ej. "ábrelo y haz scroll completo,
    checa que la sección 2 no brinque al final del pin").
-3. Si encuentras un problema, corrígelo antes de entregar — no lo reportes como "ya quedó" con un
+4. Si encuentras un problema, corrígelo antes de entregar — no lo reportes como "ya quedó" con un
    pendiente conocido sin decírselo a Ray explícitamente.
 
 ## Paso 5 — Integración a tu stack (opcional, solo si Ray lo pide o aprueba el demo)

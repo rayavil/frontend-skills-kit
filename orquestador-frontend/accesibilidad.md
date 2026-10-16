@@ -28,16 +28,41 @@ una discapacidad visual o motriz. Antes de entregar:
 Se consume de lejos (proyector, pantalla en sala de juntas, auditorio), normalmente sin que la
 audiencia controle el ritmo — reglas de slide, no de página web:
 
-- **Tamaño de texto**: títulos nunca por debajo de ~48px efectivos en pantalla completa, cuerpo de
-  texto nunca por debajo de ~24px — lo que se ve bien en un monitor de escritorio de cerca puede
-  ser ilegible a 5 metros en un auditorio.
+- **Tamaño de texto, según distancia real de visualización** — "letra grande" no es un número
+  fijo, depende de qué tan lejos está quien la lee. Antes de construir, pregúntale a Ray (o
+  infiérelo del contexto: "para llevar a bachilleratos" = auditorio/salón de clases, no monitor)
+  en cuál de estos tres escenarios se va a ver, y usa esos mínimos de tamaño efectivo en pantalla
+  completa (no el tamaño en tu editor — en pantalla completa, 1920×1080 o el que corresponda):
+
+  | Escenario | Distancia típica | Título | Cuerpo de texto | Cifras/números destacados |
+  |---|---|---|---|---|
+  | Monitor/laptop propio | <1 m | ≥32px | ≥18px | ≥40px |
+  | TV o pantalla en sala de juntas | 2-5 m | ≥64px | ≥32px | ≥90px |
+  | Proyector en auditorio/aula | 5-15+ m | ≥110px | ≥48px | ≥160px |
+
+  Si no sabes la distancia exacta, usa el escenario más exigente que sea razonable para el
+  contexto (una gira de bachilleratos casi siempre es auditorio/aula, no monitor). Nunca asumas
+  el escenario de monitor por default para algo descrito como "presentación" — ese es justo el
+  error que hace que algo se vea bien en tu laptop y sea illegible en el cañón del plantel.
+
+- **Tamaño de componentes e iconos**: igual que el texto, escala con la distancia — un ícono o
+  botón que se ve bien de cerca puede desaparecer visualmente de lejos. Para auditorio/TV, ningún
+  elemento interactivo o ícono informativo debería ser menor a ~48px efectivos; en proyector,
+  súbelo a ~80px. Evita filas de iconos pequeños o badges con texto microscópico — si hay varios
+  elementos, prefiere menos elementos más grandes a muchos pequeños.
+
 - **Densidad de información por sección/"slide"**: una idea central por sección, no un párrafo
   largo. Si el contenido real (ej. documentación institucional) trae mucho texto, resume y deja el
   detalle para un documento de apoyo aparte — la presentación no es el lugar para texto corrido.
+
 - **Tratamiento de imágenes y gráficos**: fotos y gráficos a tamaño generoso, nunca como miniatura
   decorativa — en una presentación la imagen suele ser el punto, no un acento. Las cifras clave
-  (count-up numérico) se muestran grandes y solas, no metidas en una tabla densa.
-  Para cualquier gráfico/chart, sigue el skill `dataviz` en vez de inventar colores/ejes a mano.
+  (count-up numérico) se muestran grandes y solas, no metidas en una tabla densa. Para proyector/TV,
+  evita gráficos con muchas líneas finas, leyendas chicas o etiquetas de ejes densas — se pierden
+  por completo a distancia; prefiere pocas series, etiquetas grandes y valores destacados en vez de
+  una gráfica "completa" como la verías en un dashboard. Para cualquier gráfico/chart, sigue el
+  skill `dataviz` en vez de inventar colores/ejes a mano, pero ajusta tamaños de fuente/trazo al
+  escenario de distancia de la tabla de arriba.
 - **Contraste pensado para proyector**: los proyectores lavan el contraste y saturan menos que una
   pantalla — evita combinaciones de bajo contraste que en tu monitor se ven bien pero que en un
   proyector de salón con luz ambiente se vuelven ilegibles (fondo oscuro con texto gris medio es
@@ -55,3 +80,7 @@ compartida** (aplica B). Un sitio institucional como itsf.mx es A. Una presentac
 promoción a bachilleratos es B. Si mezcla ambos usos (ej. se presenta en vivo pero luego se sube
 al sitio para que la gente la revise sola), aplica ambas reglas y prioriza B para el tamaño de
 texto — lo que es legible de lejos también es legible de cerca, no al revés.
+
+Si aplica B, no te quedes en "es presentación" — pregunta o infiere también **en qué escenario
+específico** de la tabla de tamaños de arriba (monitor propio / TV-sala de juntas / proyector-
+auditorio), porque cambia los números concretos que vas a usar en el CSS.
