@@ -1,6 +1,6 @@
 ---
 name: orquestador-frontend
-description: Usar SIEMPRE que Ray empiece un proyecto de frontend nuevo (webapp, dashboard, SaaS, tienda online, landing page, sitio institucional, presentación ejecutiva en navegador, app móvil), pida corregir/mejorar uno que ya se ve "genérico", "feo" o "como de IA", o pida verificar/instalar sus dependencias en un equipo nuevo. Esta skill decide por sí sola a cuáles otras skills del kit de Ray recurrir (elegir-ui para plantillas/componentes, frontend-design + taste-skill para dirección de arte, cinematic-gsap-lenis-motion-system + scrollytelling + gsap-skills para animación premium por scroll) según el tipo de proyecto, aplica la marca del cliente si ya existe un perfil guardado, revisa accesibilidad/legibilidad según sea sitio web o presentación, verifica el resultado antes de entregarlo, y hace de intérprete entre lo que Ray describe en términos vagos y las instrucciones técnicas concretas que cada skill necesita. Dispara con frases como "vamos a hacer...", "necesito un sitio/app/tienda/presentación de...", "arma el frontend de...", "esto se ve feo/genérico", "checa que tenga todo instalado", "verifica mis skills de frontend".
+description: Usar SIEMPRE que Ray empiece un proyecto de frontend nuevo (webapp, dashboard, SaaS, tienda online, landing page, sitio institucional, presentación ejecutiva en navegador, app móvil), pida corregir/mejorar uno que ya se ve "genérico", "feo" o "como de IA", pida auditar/revisar un archivo ya existente para pantalla grande/distancia (TV, proyector, auditorio), o pida verificar/instalar sus dependencias en un equipo nuevo. Esta skill decide por sí sola a cuáles otras skills del kit de Ray recurrir (elegir-ui para plantillas/componentes, frontend-design + taste-skill para dirección de arte, cinematic-gsap-lenis-motion-system + scrollytelling + gsap-skills para animación premium por scroll) según el tipo de proyecto, aplica la marca del cliente si ya existe un perfil guardado, revisa accesibilidad/legibilidad según sea sitio web o presentación, verifica el resultado antes de entregarlo, y hace de intérprete entre lo que Ray describe en términos vagos y las instrucciones técnicas concretas que cada skill necesita. Dispara con frases como "vamos a hacer...", "necesito un sitio/app/tienda/presentación de...", "arma el frontend de...", "esto se ve feo/genérico", "checa que tenga todo instalado", "verifica mis skills de frontend", "audita este archivo para pantalla grande/distancia", "revisa si esto se lee bien en el cañón/TV".
 ---
 
 # Orquestador de frontend
@@ -145,6 +145,13 @@ No reportes el entregable como terminado sin antes revisar esto:
    checa que la sección 2 no brinque al final del pin").
 4. Si encuentras un problema, corrígelo antes de entregar — no lo reportes como "ya quedó" con un
    pendiente conocido sin decírselo a Ray explícitamente.
+
+**Esto también se puede pedir solo, sobre un archivo que ya existe** (no solo recién construido en
+esta misma conversación). Si Ray dice algo como "audita este archivo para pantalla grande/distancia",
+"revísalo para que se lea en el cañón/TV" o "checa si esto cumple los tamaños de presentación",
+pregúntale (si no lo dijo ya) el escenario de distancia, corre solo los puntos 2 y 3 de este Paso 4
+sobre ese archivo, y repórtale qué encontraste — no hace falta reclasificar el proyecto desde el
+Paso 1 ni repetir la dirección de arte del Paso 1.5.
 
 ## Paso 5 — Integración a tu stack (opcional, solo si Ray lo pide o aprueba el demo)
 
