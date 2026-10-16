@@ -1,11 +1,11 @@
 ---
 name: orquestador-frontend
-description: Usar SIEMPRE que Ray empiece un proyecto de frontend nuevo (webapp, dashboard, SaaS, tienda online, landing page, sitio institucional, presentación ejecutiva en navegador, app móvil). Esta skill decide por sí sola a cuáles otras skills del kit de Ray recurrir (elegir-ui para plantillas/componentes, cinematic-gsap-lenis-motion-system + scrollytelling + gsap-skills para animación premium por scroll) según el tipo de proyecto, para que Ray no tenga que invocarlas una por una. Dispara con frases como "vamos a hacer...", "necesito un sitio/app/tienda/presentación de...", "arma el frontend de...".
+description: Usar SIEMPRE que Ray empiece un proyecto de frontend nuevo (webapp, dashboard, SaaS, tienda online, landing page, sitio institucional, presentación ejecutiva en navegador, app móvil) o pida corregir/mejorar uno que ya se ve "genérico", "feo" o "como de IA". Esta skill decide por sí sola a cuáles otras skills del kit de Ray recurrir (elegir-ui para plantillas/componentes, frontend-design + taste-skill para dirección de arte, cinematic-gsap-lenis-motion-system + scrollytelling + gsap-skills para animación premium por scroll) según el tipo de proyecto, y hace de intérprete entre lo que Ray describe en términos vagos y las instrucciones técnicas concretas que cada skill necesita. Dispara con frases como "vamos a hacer...", "necesito un sitio/app/tienda/presentación de...", "arma el frontend de...", "esto se ve feo/genérico".
 ---
 
 # Orquestador de frontend
 
-Esta skill es un **router**: no decide el diseño en sí, decide **qué otras skills de Ray usar y en qué orden** según el tipo de proyecto que describe.
+Esta skill tiene dos trabajos: **decide qué otras skills de Ray usar y en qué orden** según el tipo de proyecto, y **hace de director de arte** — traduce lo que Ray describe en términos vagos ("que se vea premium", "como que la persona va cambiando") a instrucciones técnicas concretas que las skills de ejecución (GSAP, Lenis, etc.) puedan construir. Ray no siempre sabe el nombre técnico de lo que imagina — este paso existe para que no tenga que saberlo.
 
 ## Paso 1 — Clasifica el proyecto
 
@@ -30,18 +30,27 @@ Lee `catalogo.yaml` de esa skill, filtra por `dashboard` o `admin_panel` según 
 **B. Tienda online → usa `elegir-ui`**
 Filtra por categoría `ecommerce`. Si Ray además quiere una landing de entrada vistosa antes del catálogo, combina con el plan C solo para esa portada.
 
-**C. Sitio premium / landing / presentación ejecutiva → usa `gsap-skills` + `cinematic-gsap-lenis-motion-system` + `scrollytelling`**
-Para la base de animación (Lenis + ScrollTrigger + pinning). Para la paleta, tipografía y componentes base (botones, cards, nav), consulta igualmente `catalogo.yaml` de `elegir-ui` en la categoría `landing_page` — no inventes componentes desde cero si ya hay uno probado en el catálogo que encaje con el estilo.
+**C. Sitio premium / landing / presentación ejecutiva → usa `frontend-design` + `taste-skill` (dirección de arte) + `gsap-skills` + `cinematic-gsap-lenis-motion-system` + `scrollytelling` (ejecución técnica)**
+Esta categoría SIEMPRE lleva dos capas, nunca solo la técnica — ver Paso 1.5 antes de construir aquí.
 
 **D. App móvil / híbrida → usa `elegir-ui`**
 Filtra por categoría `app_movil`.
 
+## Paso 1.5 — Dirección de arte (solo categoría C, o cuando Ray pida corregir algo que "se ve feo/genérico")
+
+Antes de tocar código:
+
+1. **Entiende el tono que busca Ray**, aunque lo describa vago. Si no dio referencias, pregúntale 1-2 cosas cortas: ¿tiene un sitio de referencia en mente (como palominoprod.com o jeffmilanes.com que ya usamos antes)? ¿es más minimalista/editorial o más oscuro/cinemático?
+2. **Consulta `frontend-design` y las skills de `taste-skill`** (`redesign-skill` si ya existe un archivo que corregir, `soft-skill` para tono premium/lujo, `minimalist-skill` para editorial) para fijar: paleta, tipografía, densidad visual, nivel de "experimentación" del layout. Esto define el **look en reposo** — cómo se ve el sitio sin animación.
+3. **Traduce ese look a una lista de efectos concretos** usando `tecnicas-animacion.md` (en esta misma carpeta). Si Ray describe un efecto sin saber su nombre (ej. "que la persona vaya cambiando con el scroll"), identifica cuál técnica del catálogo es y dilo en voz alta: *"eso es scroll-driven frame scrubbing — se puede, pero necesito que me des la secuencia de imágenes/fotos de la persona en cada pose."* Si la técnica requiere material que Ray no ha dado (fotos, video, secuencia de frames), pídelo ANTES de construir, no a medias.
+4. **Entrega las instrucciones técnicas ya traducidas** a las skills de ejecución (GSAP/Lenis/ScrollTrigger) — ellas no deciden el diseño, solo ejecutan lo que esta capa ya definió.
+
 ## Paso 3 — Resume la decisión antes de construir
 
 Antes de escribir código, dile a Ray en una línea qué ruta tomaste y por qué, por ejemplo:
-> "Esto es más presentación que panel funcional, así que voy con el sistema de motion (GSAP+Lenis) para las transiciones y tomo la paleta/tipografía institucional que ya tenemos."
+> "Esto es más presentación que panel funcional, así que voy con tono editorial/minimalista (taste-skill) + scroll-driven frame scrubbing para la portada, y GSAP+Lenis para las transiciones entre secciones."
 
-Esto le permite corregirte rápido si clasificaste mal el proyecto antes de que inviertas tiempo construyendo.
+Esto le permite corregirte rápido si clasificaste mal el proyecto, o si la dirección de arte no es la que imaginaba, antes de que inviertas tiempo construyendo.
 
 ## Mantenimiento
 
