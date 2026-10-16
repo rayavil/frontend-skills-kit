@@ -52,6 +52,40 @@ cp -r frontend-skills-kit/elegir-ui .agents/skills/
 cp -r frontend-skills-kit/orquestador-frontend .agents/skills/
 ```
 
+## Cómo actualizar cuando hay cambios nuevos en el repo
+
+Con `cp`, cada `git pull` requiere volver a copiar las carpetas a mano. Hay dos formas de
+traer los cambios:
+
+**Opción rápida (si instalaste con `cp`):**
+
+```bash
+cd frontend-skills-kit
+git pull
+cp -r elegir-ui/* ~/.claude/skills/elegir-ui/
+cp -r orquestador-frontend/* ~/.claude/skills/orquestador-frontend/
+```
+
+(cambia la carpeta destino a `~/.gemini/config/skills/` si es Antigravity)
+
+**Opción recomendada (una sola vez, nunca vuelves a copiar):** usa symlinks en vez de `cp`
+al instalar. Así un `git pull` en el repo clonado actualiza las skills sin ningún paso extra:
+
+```bash
+# Si ya instalaste con cp, primero quita las copias:
+rm -rf ~/.claude/skills/elegir-ui ~/.claude/skills/orquestador-frontend
+
+# Symlink a la ruta real donde clonaste el repo:
+ln -s /ruta/a/frontend-skills-kit/elegir-ui ~/.claude/skills/elegir-ui
+ln -s /ruta/a/frontend-skills-kit/orquestador-frontend ~/.claude/skills/orquestador-frontend
+```
+
+A partir de ahí, actualizar en cualquier equipo es solo:
+
+```bash
+cd frontend-skills-kit && git pull
+```
+
 ## Mantenimiento
 
 Cuando pruebes una plantilla nueva o una ya catalogada deje de servir, dile al agente
