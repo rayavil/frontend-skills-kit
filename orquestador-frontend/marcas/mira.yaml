@@ -1,0 +1,30 @@
+# Perfil de marca — mira! soluciones multimedia
+# Generado desde las notas de marca de Ray. Campos marcados como null faltan —
+# complétalos la próxima vez que se use esta marca en un proyecto, en vez de inventarlos.
+
+cliente: "mira! soluciones multimedia"
+alias: ["mira!", "mira soluciones multimedia"]
+ultima_verificacion: "2026-10-16"
+
+paleta:
+  acento: "#F2A33C"   # ámbar
+  primario: null       # no documentado aún — preguntar a Ray antes de asumir un fondo/color base
+  neutro: null
+
+tipografia: null  # no documentado aún
+
+arquitectura_de_marca:
+  claim: "No te lo contamos. Míralo."
+  frentes:
+    - "mira! Studio"
+    - "mira! Lab"
+    - "mira! Campus"
+    - "mira! Media"
+  nota: "Ocho servicios consolidados en estos cuatro frentes con nombre propio — si el proyecto es para uno de ellos, aclara cuál para ajustar el tono (Studio/Media más creativo-visual, Lab más técnico, Campus más educativo)."
+
+logo:
+  variantes: ["horizontal", "vertical", "avatar", "favicon", "mosca/watermark"]
+  formato: "SVG vectorizado"
+  nota: "Cuidado al minificar SVG de este logo — hubo un bug real donde scale(0.1,-0.1) se colapsaba a scale(0,-0) y rompía el logo."
+
+uso_recomendado: null  # no documentado aún — preguntar si hay un tono distinto por frente de marca
