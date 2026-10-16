@@ -1,0 +1,96 @@
+# Perfil de marca — Medio Maratón Fresnillo (MMF)
+# Valores tomados del sitio oficial mediomaratonfresnillo.com (CSS y textos publicados) y de las
+# carpetas de recursos gráficos de Drive. Campos en null = el sitio no los publica; complétalos
+# cuando Ray los confirme, en vez de inventarlos.
+
+cliente: "Medio Maratón Fresnillo"
+alias: ["MMF", "MMF/2027", "Medio Maratón Fresnillo 2027", "mediomaratonfresnillo.com", "carrera de Fresnillo"]
+ultima_verificacion: "2026-10-16"
+
+# Marca oscura y monocromática: no hay un color de acento aparte, el "acento" es el mismo hueso del texto.
+paleta:
+  fondo: "#0b0b0c"            # bg — fondo de página y theme-color del sitio
+  superficie: "#121214"       # tarjetas, campos, cajas de la cuenta regresiva
+  linea: "#26262a"            # divisores y bordes de 1px (solo trazos, nunca texto)
+  texto: "#eceae6"            # hueso: texto principal, titulares, acento y emblema
+  texto_suave: "#cfcdc8"      # antetítulo «MEDIO MARATÓN»
+  texto_secundario: "#9c9b97" # etiquetas y apoyos (≈7:1 sobre el fondo)
+  tenue: "#55555b"            # solo marcas decorativas, ≈2.7:1: NO usar para texto
+  acento: "#eceae6"           # = texto; botón principal con fondo hueso y texto #0b0b0c
+  confirmacion: "#3ddc84"     # verde, solo confirmaciones; uso mínimo y siempre con texto
+  nota: "Sin gradientes ni colores extra. Todo el contraste viene de hueso sobre casi-negro. Para presentaciones: todas las láminas en #0b0b0c."
+
+tipografia:
+  titulos: "Saira, cursiva, peso 800, MAYÚSCULAS, ancho expandido (font-stretch 125%), tracking -1.12px"
+  antetitulo: "Saira cursiva 800 MAYÚSCULAS, 27px, tracking 3.8px, color #cfcdc8"
+  encabezados: "Saira 700, 24px / 38px, sin cursiva"
+  cuerpo: "Saira 400, 16px / 26px"
+  mono: "JetBrains Mono — cuenta regresiva, números de dorsal y micro-etiquetas"
+  fuente: "Ambas en Google Fonts"
+  hero: "FRESNILLO a 120px / 108px (display-hero)"
+
+forma:
+  radios: "0 — todo con esquinas rectas"
+  bordes: "1px #26262a"
+  sombras: "ninguna"
+
+tono_visual:
+  - "Oscuro, monocromático y de 'operación clasificada': lo no anunciado se muestra como ████ y la etiqueta «Clasificado»; úsalo solo para datos realmente pendientes."
+  - "Fotografía de la calle de Fresnillo en blanco y negro, oscurecida; el emblema del minero en blanco sólido encima."
+  - "Movimiento con ease-out cubic-bezier(0.23, 1, 0.32, 1) y ease-in-out cubic-bezier(0.77, 0, 0.175, 1); respetar siempre movimiento reducido."
+  - "Sin emojis, sin iconos decorativos, sin glassmorphism ni gradientes de color."
+
+voz:
+  - "Habla de tú y en imperativo corto: «Suscríbete a las novedades», «Construye tu propio reto», «Baja y empieza a correr»."
+  - "Lema: «Construye tu propio reto». Salida: «En sus marcas · Listos · ¡Ya!». Promesa: «Cada metro cuenta»."
+  - "Distancia siempre como 21,097.5 m (o «21,097.5 metros»); fecha como «Mayo 2027»; sigla MMF/2027."
+  - "No prometer fecha, costo, ruta ni kit hasta que estén publicados."
+
+logo:
+  descripcion: "Minero de perfil, mirando a la derecha, con casco y lámpara frontal; una sola tinta, blanco hueso sobre fondo oscuro."
+  formato_disponible: "PNG con fondo transparente (MINERO.png). No hay SVG todavía: pedírselo a Ray si la pieza va a pantalla grande o impresión."
+  reglas: "Un emblema por lámina como máximo; no recolorear, contornear, girar ni repetir como patrón. Acompañarlo de FRESNILLO (display-hero) con MEDIO MARATÓN encima."
+
+evento:
+  nombre: "Medio Maratón Fresnillo"
+  anio: 2027
+  fecha: "Mayo de 2027 (día exacto sin anunciar)"
+  distancia: "21,097.5 m (21.0975 km)"
+  sede: "Fresnillo, Zacatecas, México"
+  coordenadas: "23.1747, -102.8686"
+  sitio: "https://mediomaratonfresnillo.com/"
+  contacto: "mediomaratonfllo@carrerasfresnillo.com"
+  redes: "@mediomaratonfllo en Instagram, Facebook y TikTok"
+  registro: "Aún no abierto; lista de espera en el sitio"
+  pendiente_oficial: "Salida y meta, ruta, kit, categorías y costo de inscripción figuran como «clasificado» en el sitio."
+  # Datos que el sitio NO publica y que la presentación a patrocinadores necesita — null hasta que Ray los confirme:
+  organizador: null
+  patrocinadores_actuales: null
+  numero_de_edicion: null
+  aforo_esperado: null
+  paquetes_de_patrocinio: null
+  precios_de_patrocinio: null
+  contacto_comercial: null
+  nota_carpeta: "La carpeta madre de Drive se llama «MEDIO MARATON FRESNILLO 2026» aunque el evento es mayo 2027; probablemente solo el nombre de la carpeta."
+
+recursos:
+  sistema_de_diseno: "https://claude.ai/artifact/U9wx18v9diPPaGeoEwpkgR   # privado; tokens, brand book, ficha del evento"
+  drive_recursos_graficos: "https://drive.google.com/drive/folders/1IA6exYAbdNju-TfEXh8pG8IYuDACBzx4"
+  drive_textos_sin_fondo: "https://drive.google.com/drive/folders/1zLsGHF-nTguT9KTRlOAV-oQpYRCxkhku"
+  inventario:
+    fotos_de_calle: "11.jpg, 12.jpg, 13.jpg — fotos oscuras en escala de grises; fondos de lámina"
+    graficos_de_marca: "14.jpg (FRESNILLO), 15.jpg (lockup con minero y 21,097.5 metros), 19.jpg (minero), 20.jpg (MAYO 2027), POST 01.jpg"
+    redes: "16.jpg (Síguenos y construye tu propio reto), 17.jpg (@mediomaratonfllo), 18.jpg (mediomaratonfresnillo.com)"
+    logo: "MINERO.png con fondo transparente"
+    version_sin_fondo: "TEXTOS SIN FONDO: 15.png a 20.png, versiones transparentes de los gráficos 15 a 20"
+    video: "PROMO 001.mov — dejarlo en Drive, no meterlo al repo por peso"
+  imagenes_del_sitio:
+    - "https://mediomaratonfresnillo.com/assets/img/minero.webp"
+    - "https://mediomaratonfresnillo.com/assets/img/og.jpg"
+    - "https://mediomaratonfresnillo.com/assets/img/bg-calle.webp"
+  pendientes_de_ray: "Más imágenes y videos que le van a pasar."
+
+uso_recomendado:
+  - "Presentación empresarial para buscar patrocinadores (proyecto actual): láminas 16:9 en #0b0b0c, texto #eceae6, títulos Saira cursiva mayúsculas, una cifra protagonista por lámina (21,097.5 m), fotos en escala de grises, emblema una vez por lámina."
+  - "Estructura sugerida: portada con el lockup, el evento y su ritual, el reto (21,097.5 m en Fresnillo), por qué patrocinar (requiere los datos en null de arriba), paquetes y contacto, cierre con «Construye tu propio reto»."
+  - "Piezas de redes y sitio: la misma paleta; lo pendiente se muestra como «Clasificado», no se inventa."
