@@ -32,3 +32,16 @@ Ray imagina.
 En vez de describir el efecto, dilo así: *"quiero la sección de portada con scroll-driven frame
 scrubbing"* o *"esta parte con sticky side-by-side"* — el agente ya sabe qué construir y con qué
 herramienta de las que tenemos instaladas.
+
+## Fuentes de referencia visual
+
+Antes de construir una técnica de esta lista, el agente busca una referencia actual en una de
+estas dos fuentes (ver Paso 1.5 de `orquestador-frontend/SKILL.md`):
+
+- **Codrops** (tympanus.net/codrops) — hub de tutoriales con demos reales **y código fuente**
+  (GitHub/CodePen), filtrable por etiqueta de técnica (ej. `?tag=gsap`). Es la fuente preferida
+  porque no es solo inspiración, se puede ver cómo está hecho.
+- **elite-inspiration** (skill de terceros) — índice curado de sitios premiados (Awwwards, FWA,
+  CSS Design Awards, Godly, Landbook) organizado por patrón/técnica, con método de estudio
+  incluido. Instalar con `npx skillscat add rshvr/elite-web-design/elite-inspiration`. Útil para
+  tono/dirección de arte cuando Codrops no tiene un ejemplo claro de la técnica pedida.
