@@ -10,30 +10,41 @@ Esta skill tiene dos trabajos: **decide qué otras skills de Ray usar y en qué 
 ## Paso 0 — Verifica dependencias (solo la primera vez que se usa en un equipo)
 
 Esta skill depende de otras cinco. Antes de activar el Paso 1 por primera vez en una máquina,
-revisa si ya están instaladas (en Claude Code: `ls ~/.claude/skills/`). Si falta alguna, instálala
-tú mismo con estos comandos — no le pidas a Ray que los corra manualmente, para eso existe este
-paso:
+detecta primero **en qué agente estás corriendo** (Claude Code o Antigravity) — la carpeta de
+instalación y el flag `--agent` cambian según cuál sea:
+
+| Agente | Carpeta global de skills | Flag para `npx skills add` |
+|---|---|---|
+| Claude Code | `~/.claude/skills/` | `--agent claude-code` |
+| Antigravity | `~/.gemini/config/skills/` | `--agent antigravity` |
+
+Revisa si las dependencias ya están en la carpeta que corresponda a tu agente. Si falta alguna,
+instálala tú mismo — no le pidas a Ray que corra esto manualmente, para eso existe este paso.
+Sustituye `<CARPETA>` y `<AGENTE>` según la tabla de arriba:
 
 ```bash
-# elegir-ui (catálogo de UI/plantillas) — viene en el mismo repo que esta skill
-# ya debería estar si clonaste frontend-skills-kit completo; si falta:
-cp -r <ruta-del-clon>/frontend-skills-kit/elegir-ui ~/.claude/skills/
+# elegir-ui (catálogo de UI/plantillas) — viene en el mismo repo que esta skill;
+# ya debería estar si clonaste frontend-skills-kit completo, si falta:
+cp -r <ruta-del-clon>/frontend-skills-kit/elegir-ui <CARPETA>
 
 # Animación por scroll (motion)
-npx skills add https://github.com/greensock/gsap-skills --agent claude-code --global
-npx skills add https://github.com/MengTo/Skills --skill cinematic-gsap-lenis-motion-system --agent claude-code --global
-npx skills add doodledood/claude-code-plugins --skill scrollytelling --agent claude-code --global
+npx skills add https://github.com/greensock/gsap-skills --agent <AGENTE> --global
+npx skills add https://github.com/MengTo/Skills --skill cinematic-gsap-lenis-motion-system --agent <AGENTE> --global
+npx skills add doodledood/claude-code-plugins --skill scrollytelling --agent <AGENTE> --global
 
 # Dirección de arte / taste
-npx skills add https://github.com/Leonxlnx/taste-skill --agent claude-code --global
+npx skills add https://github.com/Leonxlnx/taste-skill --agent <AGENTE> --global
 
-# Referencia visual
+# Referencia visual (no tiene flag --agent; mismo comando para ambos)
 npx skillscat add rshvr/elite-web-design/elite-inspiration
 ```
 
-Si algún comando falla (nombre de paquete cambió, CLI no instalado, etc.), dile a Ray el error
-exacto y qué intentaste — no te quedes callado ni sigas como si hubiera funcionado. Una vez
-instalada una dependencia en una máquina, no vuelvas a correr su comando ahí.
+Si algún comando falla (nombre de paquete cambió, CLI no instalado, el flag `--agent antigravity`
+no existe todavía en una versión del CLI, etc.), dile a Ray el error exacto y qué intentaste — no
+te quedes callado ni sigas como si hubiera funcionado. Si un paquete de terceros no soporta
+instalar directo para Antigravity, cópialo manualmente a la carpeta de Antigravity de la tabla de
+arriba (mismo formato `SKILL.md`, solo cambia dónde vive). Una vez instalada una dependencia en
+una máquina, no vuelvas a correr su comando ahí.
 
 ## Paso 1 — Clasifica el proyecto
 
